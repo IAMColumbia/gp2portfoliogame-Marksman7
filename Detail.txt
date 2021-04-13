@@ -1,0 +1,25 @@
+f/e peacie slector
+arrows chose were to move
+r backwards time
+
+-+-Things done 
+-code for the game play is done
+-red vs blue colors?
+-fixed out of array errors (misspleeled different varriables + misscaluaitons)
+-fixed game breaking bug of haveing the person just kind of have two moveing at once
+-changed it so everything relises on the graphical postion, and does not use the transform.translate(numbers) for the engine, but the tranofrm.postion instead so it can be put into something like monogame faily easy
+-put in the system to play the game include rock vs paper idea
+-peice elimination
+
+-+-things still need 
+-work art
+-audio
+-menu ui
+-better win event other than a button that say some one can exit now
+-make r backward an back in time event as an command
+-have more different scripts (to look more fancyer)
+-
+
+-+-things not to do because not in best intrest
+-The ball thing
+
