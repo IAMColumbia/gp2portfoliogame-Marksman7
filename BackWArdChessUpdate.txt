@@ -1,0 +1,10 @@
+/-spanwer and player _ renamed more acurately to Spawnerandhandler
+/-SectionPlayerOne and SEctionPlayerTwo = instnces
+/-PeiceMeovement is seperated into peicemovemtn and septrate peicemenovemt that has the inputs
+/-deleted TwoPeiceMovement since it was not needed and all could be done in one class
+/-Builds are in the folder called builds with a s sorry I have a problem and that is adding the letter s for no reason...
+/-make two camperas seprate view on both sides
+/-Rename the keeper and keepers to better sounding names
+/-theres no board, so I added one (a 3d model) (Looks very simimlar to a chessboard...)
+/-fix win variable (out of bounds error(for got that count is the whole number so just added a one))
+/-When other peice go to a square with the same team the "order happens"
