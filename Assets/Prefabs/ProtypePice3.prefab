@@ -120,7 +120,7 @@ MonoBehaviour:
   - {fileID: 5168167247503391357}
   - {fileID: 1005263956254011213}
   TrackingThingsToUndo: []
-  HowmanyBack: 1
+  HowmanyBack: 3
 --- !u!1 &1005263956254011213
 GameObject:
   m_ObjectHideFlags: 0

@@ -1432,7 +1432,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 130}
-  m_SizeDelta: {x: 600, y: 100}
+  m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874062358
 MonoBehaviour:
@@ -1457,12 +1457,13 @@ MonoBehaviour:
 
     WASD-<movement>-Arrors
 
-    R-<undo>-K
+    R-<undo
+    3 spaces if there were 3 moves made>-K
 
-    Q-<Swith
-    Movement style>-L
+    Q-<Swith Movement style>-L
 
-    E/F-<Select peice back/forward>-O/P'
+    E/F-<Select
+    peice back/forward>-O/P'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

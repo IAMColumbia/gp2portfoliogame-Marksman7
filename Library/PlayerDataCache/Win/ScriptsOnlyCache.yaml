@@ -638,4 +638,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/TestingWinScene.unity
-  playerPath: C:/Users/markg/OneDrive - Columbia College Chicago/BackWardChess/BackWardTimePlacement/Builds/Build08/BackWardTimePlacement.exe
+  playerPath: C:/Users/markg/OneDrive - Columbia College Chicago/BackWardChess/BackWardTimePlacement/Builds/Build09/BackWardTimePlacement.exe
