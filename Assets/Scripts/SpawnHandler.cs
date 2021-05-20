@@ -183,6 +183,7 @@ public class SpawnHandler : MonoBehaviour
             }
             //PlayerTwoEliminator(keepers);
             //PlayerEliminatior();
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Player[PeiceHandler].SetActive(false);
@@ -210,22 +211,74 @@ public class SpawnHandler : MonoBehaviour
                 Player[PeiceHandler].SetActive(true);
             }
 
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.O))
             {
-
-                if (this.PlayerTurn == true)
+                Player[PeiceHandler].SetActive(false);
+                if (PeiceHandler <= 0)
                 {
-                this.PlayerTurn = false;
+                    PeiceHandler = (Player.Count - 1);//(PlayerOne.Count - 1);
                 }
                 else
                 {
-                    this.PlayerTurn = true;
+                    PeiceHandler = PeiceHandler - 1;
                 }
-                NextTurnHandler = PeiceHandler;
-                PeiceHandler = 0;
-                OtherPlayer[PeiceHandler].SetActive(true);
-
+                Player[PeiceHandler].SetActive(true);
             }
+            else if (Input.GetKeyDown(KeyCode.P))
+            {
+                Player[PeiceHandler].SetActive(false);
+                if (PeiceHandler >= (Player.Count - 1))//(PlayerOne.Count + 1))
+                {
+                    PeiceHandler = 0;
+                }
+                else
+                {
+                    PeiceHandler = PeiceHandler + 1;
+                }
+                Player[PeiceHandler].SetActive(true);
+            }
+
+
+            if(this.PlayerTurn == true)
+            {
+                if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.R))
+                {
+
+                    if (this.PlayerTurn == true)
+                    {
+                        this.PlayerTurn = false;
+                    }
+                    else
+                    {
+                        this.PlayerTurn = true;
+                    }
+                    NextTurnHandler = PeiceHandler;
+                    PeiceHandler = 0;
+                    OtherPlayer[PeiceHandler].SetActive(true);
+
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.K))
+                {
+
+                    if (this.PlayerTurn == true)
+                    {
+                        this.PlayerTurn = false;
+                    }
+                    else
+                    {
+                        this.PlayerTurn = true;
+                    }
+                    NextTurnHandler = PeiceHandler;
+                    PeiceHandler = 0;
+                    OtherPlayer[PeiceHandler].SetActive(true);
+
+                }
+            }
+
+            
         }
     }
 
@@ -515,109 +568,121 @@ public class SpawnHandler : MonoBehaviour
 
     void SpawnBoard()
     {
+        int crap = 0;
+
+
         for (int i = 0; i < 4; i++)
         {
             //GameObject here = Instantiate(objectSpaned, new Vector3((this.gameObject.transform.position.x + 1), this.gameObject.transform.position.y , (this.gameObject.transform.position.z + 1));
+            int minusing = 0;
 
-            PlayerOne.Add(Instantiate(RedTeamPeice[0], transform.TransformPoint(i, 0, 2), this.gameObject.transform.rotation));
-            PlayerOneTracker.Add(Instantiate(PeiceLookRed[0], transform.TransformPoint(i, 0, 2), this.gameObject.transform.rotation));
+            if (i == 0)
+            {
+                minusing = 0;
+            }
+            else
+            {
+                minusing = (i * 3);
+            }
+            PlayerOne.Add(Instantiate(RedTeamPeice[0], transform.TransformPoint(minusing, 0, 2), this.gameObject.transform.rotation));
+            PlayerOneTracker.Add(Instantiate(PeiceLookRed[0], transform.TransformPoint(minusing, 0, 2), this.gameObject.transform.rotation));
             PlayerOnePeiceType.Add(1);
-            PlayerOne[i].SetActive(false);
+            PlayerOne[crap].SetActive(false);
+
+            crap = crap + 1;
+            if (i == 0)
+            {
+                minusing = 1;
+            }
+            else
+            {
+                minusing = (i * 3) + 1;
+            }
+            PlayerOne.Add(Instantiate(RedTeamPeice[1], transform.TransformPoint(minusing, 0, 2), this.gameObject.transform.rotation));
+            PlayerOneTracker.Add(Instantiate(PeiceLookRed[1], transform.TransformPoint(minusing, 0, 2), this.gameObject.transform.rotation));
+            PlayerOnePeiceType.Add(2);
+            PlayerOne[crap].SetActive(false);
+
+            crap = crap + 1;
+            if (i == 0)
+            {
+                minusing = 2;
+            }
+            else
+            {
+                minusing = (i * 3) + 2;
+            }
+            PlayerOne.Add(Instantiate(RedTeamPeice[2], transform.TransformPoint(minusing, 0, 2), this.gameObject.transform.rotation));
+            PlayerOneTracker.Add(Instantiate(PeiceLookRed[2], transform.TransformPoint(minusing, 0, 2), this.gameObject.transform.rotation));
+            PlayerOnePeiceType.Add(3);
+            PlayerOne[crap].SetActive(false);
             // PlayerOneTracker[i].transform.position.x
             // Board[Mathf.CeilToInt(PlayerOneTracker[i].transform.position.x), Mathf.CeilToInt(PlayerOneTracker[i].transform.position.z)] = PlayerOnePeiceType[i];
 
-
+            crap = crap + 1;
 
         }
         PlayerOne[0].SetActive(true);
 
-        for (int i = 4; i < 8; i++)
-        {
-            int minusing = 0;
-
-            if (i == 4 || i == 7)
-            {
-                minusing = 1;
-            }
-            PlayerOne.Add(Instantiate(RedTeamPeice[1], transform.TransformPoint(i, 0, (3 - minusing)), this.gameObject.transform.rotation));
-            PlayerOneTracker.Add(Instantiate(PeiceLookRed[1], transform.TransformPoint(i, 0, (3 - minusing)), this.gameObject.transform.rotation));
-            PlayerOnePeiceType.Add(2);
-            PlayerOne[i].SetActive(false);
-
-
-
-
-        }
-
-        for (int i = 8; i < 12; i++)
-        {
-
-
-            PlayerOne.Add(Instantiate(RedTeamPeice[2], transform.TransformPoint(i, 0, 2), this.gameObject.transform.rotation));
-            PlayerOneTracker.Add(Instantiate(PeiceLookRed[2], transform.TransformPoint(i, 0, 2), this.gameObject.transform.rotation));
-            PlayerOnePeiceType.Add(3);
-            PlayerOne[i].SetActive(false);
-            // Board[Mathf.CeilToInt(PlayerOneTracker[i].transform.position.x), Mathf.CeilToInt(PlayerOneTracker[i].transform.position.z)] = PlayerOnePeiceType[i];
-
-
-
-        }
+        crap = 0;
 
         for (int i = 0; i < 4; i++)
         {
             //GameObject here = Instantiate(objectSpaned, new Vector3((this.gameObject.transform.position.x + 1), this.gameObject.transform.position.y , (this.gameObject.transform.position.z + 1));
+            int aminusing = 0;
 
-            PlayerTwo.Add(Instantiate(BlueTeamPeice[0], transform.TransformPoint(i, 0, 9), this.gameObject.transform.rotation));
-            PlayerTwoTracker.Add(Instantiate(PeiceLookBlue[0], transform.TransformPoint(i, 0, 9), this.gameObject.transform.rotation));
+            if (i == 0)
+            {
+                aminusing = 0;
+            }
+            else
+            {
+                aminusing = (i * 3);
+            }
+            PlayerTwo.Add(Instantiate(BlueTeamPeice[0], transform.TransformPoint(aminusing, 0, 9), this.gameObject.transform.rotation));
+            PlayerTwoTracker.Add(Instantiate(PeiceLookBlue[0], transform.TransformPoint(aminusing, 0, 9), this.gameObject.transform.rotation));
             PlayerTwoPeiceType.Add(1);
-            PlayerTwo[i].SetActive(false);
+            PlayerTwo[crap].SetActive(false);
+
+            crap = crap + 1;
+            if (i == 0)
+            {
+                aminusing = 1;
+            }
+            else
+            {
+                aminusing = (i * 3) + 1;
+            }
+
+            PlayerTwo.Add(Instantiate(BlueTeamPeice[1], transform.TransformPoint(aminusing, 0, 9), this.gameObject.transform.rotation));
+            PlayerTwoTracker.Add(Instantiate(PeiceLookBlue[1], transform.TransformPoint(aminusing, 0, 9), this.gameObject.transform.rotation));
+            PlayerTwoPeiceType.Add(2);
+            PlayerTwo[crap].SetActive(false);
+
+            crap = crap + 1;
+            if (i == 0)
+            {
+                aminusing = 2;
+            }
+            else
+            {
+                aminusing = (i * 3) + 2;
+            }
+
+            PlayerTwo.Add(Instantiate(BlueTeamPeice[2], transform.TransformPoint(aminusing, 0, 9), this.gameObject.transform.rotation));
+            PlayerTwoTracker.Add(Instantiate(PeiceLookBlue[2], transform.TransformPoint(aminusing, 0, 9), this.gameObject.transform.rotation));
+            PlayerTwoPeiceType.Add(3);
+            PlayerTwo[crap].SetActive(false);
             // PlayerOneTracker[i].transform.position.x
 
             // Board[Mathf.CeilToInt(PlayerTwoTracker[i].transform.position.x), Mathf.CeilToInt(PlayerTwoTracker[i].transform.position.z)] = PlayerOnePeiceType[i];
-
+            crap = crap + 1;
 
 
         }
         //PlayerTwo[0].SetActive(true);
 
-        for (int i = 4; i < 8; i++)
-        {
-
-            int Adding = 0;
-
-            if (i == 4 || i == 7)
-            {
-                Adding = 1;
-            }
-            //GameObject here = Instantiate(objectSpaned, new Vector3((this.gameObject.transform.position.x + 1), this.gameObject.transform.position.y , (this.gameObject.transform.position.z + 1));
-
-            PlayerTwo.Add(Instantiate(BlueTeamPeice[1], transform.TransformPoint(i, 0, (8 + Adding)), this.gameObject.transform.rotation));
-            PlayerTwoTracker.Add(Instantiate(PeiceLookBlue[1], transform.TransformPoint(i, 0, (8 + Adding)), this.gameObject.transform.rotation));
-            PlayerTwoPeiceType.Add(2);
-            PlayerTwo[i].SetActive(false);
-            // PlayerOneTracker[i].transform.position.x
-
-            // Board[Mathf.CeilToInt(PlayerTwoTracker[i].transform.position.x), Mathf.CeilToInt(PlayerTwoTracker[i].transform.position.z)] = PlayerOnePeiceType[i];
-
-
-
-        }
-
-        for (int i = 8; i < 12; i++)
-        {
-            //GameObject here = Instantiate(objectSpaned, new Vector3((this.gameObject.transform.position.x + 1), this.gameObject.transform.position.y , (this.gameObject.transform.position.z + 1));
-
-            PlayerTwo.Add(Instantiate(BlueTeamPeice[2], transform.TransformPoint(i, 0, 9), this.gameObject.transform.rotation));
-            PlayerTwoTracker.Add(Instantiate(PeiceLookBlue[2], transform.TransformPoint(i, 0, 9), this.gameObject.transform.rotation));
-            PlayerTwoPeiceType.Add(3);
-            PlayerTwo[i].SetActive(false);
-            // PlayerOneTracker[i].transform.position.x
-
-            // Board[Mathf.CeilToInt(PlayerTwoTracker[i].transform.position.x), Mathf.CeilToInt(PlayerTwoTracker[i].transform.position.z)] = PlayerOnePeiceType[i];
-
-
-
-        }
+        
 
         //PlayerOneTrack = PlayerOne.Count;
 

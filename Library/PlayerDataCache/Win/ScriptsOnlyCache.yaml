@@ -34,7 +34,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -47,29 +53,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11216}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11356}
-    - Class: 114
-      Script: {instanceID: 11740}
+      Script: {instanceID: 11382}
     - Class: 114
       Script: {instanceID: 11766}
     - Class: 114
-      Script: {instanceID: 12124}
+      Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 12342}
+      Script: {instanceID: 12152}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12372}
     - Class: 114
-      Script: {instanceID: 12542}
+      Script: {instanceID: 12388}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12754}
+      Script: {instanceID: 12634}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12782}
+    - Class: 114
+      Script: {instanceID: 12984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -114,25 +120,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11150}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11216}
+      Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11342}
     - Class: 114
-      Script: {instanceID: 11356}
+      Script: {instanceID: 11382}
     - Class: 114
-      Script: {instanceID: 11740}
+      Script: {instanceID: 11766}
     - Class: 114
-      Script: {instanceID: 12124}
+      Script: {instanceID: 11976}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12152}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 12212}
     - Class: 114
-      Script: {instanceID: 14724}
+      Script: {instanceID: 12634}
     - Class: 114
-      Script: {instanceID: 25312}
+      Script: {instanceID: 12984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -378,6 +384,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 40368347dab0bfdc6f9074e5cc44dfbf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SeprateMovemnt
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -412,6 +424,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: bf859de0012013d69f3e631c39c52026
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnHandler
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -616,20 +634,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 40368347dab0bfdc6f9074e5cc44dfbf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SeprateMovemnt
-  - hash:
-      serializedVersion: 2
-      Hash: bf859de0012013d69f3e631c39c52026
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpawnHandler
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/TestingWinScene.unity
-  playerPath: C:/Users/markg/OneDrive - Columbia College Chicago/BackWardChess/BackWardTimePlacement/Builds/Build06/BackWardTimePlacement.exe
+  playerPath: C:/Users/markg/OneDrive - Columbia College Chicago/BackWardChess/BackWardTimePlacement/Builds/Build09/BackWardTimePlacement.exe
